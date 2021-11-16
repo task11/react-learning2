@@ -50,11 +50,29 @@
     );
   }
 
+  function KmToMile() {
+    return (
+      <h2>Km to Mile</h2>
+    );
+  }
+
   function App() {
+    const [index, setIndex] = React.useState("xx");
+    const onSelect = () => {
+      setIndex(event.target.value);
+    }
     return (
       <div>
         <h1 className="hi">Super Converter</h1>
-        <MinutesToHours />
+        <select value={index} onChange={onSelect}>
+          <option value="xx">Please Select</option>
+          <option value="0">Minutes & Hours</option>
+          <option value="1">Km & Mile</option>
+        </select>
+        <hr />
+        {index === "xx" ? "Select What You Want !" : null}
+        {index === "0" ? <MinutesToHours /> : null}
+        {index === "1" ? <KmToMile /> : null}
       </div>
     );
   }
