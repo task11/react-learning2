@@ -22,6 +22,7 @@
         fontSize: props.fontSize
       }}>{props.text}</button>
   }
+
   const MemorizedBtn = React.memo(Btn);
   function App() {
     const [value, setValue] = React.useState("Save Changes");
@@ -29,7 +30,7 @@
     return (
       <div>
         <MemorizedBtn text={value} changeValue={changeValue} fontSize={20} />
-        <MemorizedBtn text="Continue" />
+        <MemorizedBtn text={14} fontSize={"asdasd"} />
       </div>
     );
   }
